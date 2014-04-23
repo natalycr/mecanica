@@ -1,0 +1,261 @@
+\documentclass{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{tensor}
+\title{Uso de ondas P y S para determinar el tensor de rigidez y su compilancia para rocas  de  simetria Ortotropica}
+\author{Nataly Castillo Ruiz}
+
+\begin{document}
+\maketitle
+\date{}
+
+\begin{abstract}
+ 
+\end{abstract}
+
+\section{Introduci\'on}
+
+Propiedades f\'isicas  como la  rigidez de las rocas son  herramienta utiles  que permite hacer  an\'alisis mas  detallados  del  comportamineto y estructuras presentes en estas. Cada propiedad esta relacionada con factores como la simetria de las caras del objeto, y su simetria interna, en el caso de las rocas, la horientaci\'on de sus cristales. El  estudio y  an\'alisi de la variacion de ondas s\'ismicas  permite relacionar la velocidad de las ondas, tanto primarias como secundarias, con  los tensores   de   esfuerzo  $\sigma_{ij}$ y  tención $\varepsilon_{ij}$ los  cuales  a su vez estan relacionados  atravéz  de  la rigidez $C_{ijkl}$. 
+
+\begin{equation}
+ \sigma_{ij}=\varepsilon_{ij}*C_{ijkl}
+\end{equation}
+
+\begin{equation}
+ \varepsilon_{ij}=\sigma_{ij}*S_{ijkl}
+\end{equation}
+La rigidez $C_{ijkl}$ es  la relaci\'on entre la fuerza aplicada y deformaci\'on. Dependiendo de los grados de libertar es expresada en forma de tensor. La inversa de la rigidez es llamada  compilancia la cual esta  definida como $S_{ijkl} = \dfrac{1}{C_{ijkl}}$. 
+
+Las relaciones anteriores  se utiliza  en el momento de analizar el movimiento y la  deformación de  un material continuo y elástico. Para lo cual se recurre a las ecuaciones  de  Navier\’s las cuales permitiran relacionar la rigidez con las ondas s\'ismicas. Para ello se calcula la sumatoria de  fuerzas en terminos de desplazamiento. Por ejemplo en una  dirección j particular esto se vería:  
+
+
+\begin{equation}
+ {\rho}\dfrac{\partial^{2}{u_{j}}}{\partial{t}^{2}}=\rho X_{j}+(\mu-\lambda)\dfrac{\partial^{2}{u_{k}}}{\partial{x_{j}}\partial{x_{k}}}+ \mu \dfrac{\partial^{2}{u_{j}}}{\partial{x_{k}^{2}}}
+\end{equation}
+
+Donde:
+
+${\rho}\dfrac{\partial^{2}{u_{j}}}{\partial{t}^{2}}$ Densidad * aceleracio\'n 
+
+$\rho X_{j}$  Fuerzas de cuerpo 
+
+$(\mu-\lambda)\dfrac{\partial^{2}{u_{k}}}{\partial{x_{j}}\partial{x_{k}}}+ \mu \dfrac{\partial^{2}{u_{j}}}{\partial{x_{k}^{2}}}$ Fuerzas de superficie 
+
+Debido a que se est\'a trabajando en medio continuo, las fuerzas de cuerpo como gravedad son despreciadas. Y gracias  a las propiedades de las ondas  p (las cuales se propagan en una  sola  dirección) se puede decir que en la ecuación anterior j = k   simplificando  la  ecuaci\'on anterior d\'andonos:
+
+ \begin{equation}
+ {\rho}\dfrac{\partial^{2}{u_{1}}}{\partial{t}^{2}}=({2}\mu-\lambda)\dfrac{\partial^{2}{u_{1}}}{\partial{x_{1}^{2}}}
+\end{equation}
+Donde $j, k =1$ y comparandolo con la ecuacion de onda nos deja que $V_{p}^{2} = \dfrac{({2}\mu-\lambda)}{\rho}$. 
+
+Por otro lado el movimiento de las  ondas secundarias(s) es diferente ya que la onda  se  propaga en dos direcciones. Asi que para medirlas, solo se tiene en cuenta la dirección, y nuevamente se eliminan las fuerzas de cuerpo debido a que se trabaja en medio continuo.  Ya con los paremetros anteriores tenemos que  por lo que la ecuación de movimiento es :
+
+\begin{equation}
+ {\rho}\dfrac{\partial^{2}{u_{2}}}{\partial{t}^{2}}=\mu\dfrac{\partial^{2}{u_{2}}}{\partial{x_{1}^{2}}}
+\end{equation}
+
+Donde $j, k =1$
+
+ $V_{s}^{2} = \frac{\mu}{\rho}$
+ 
+\section{Tipos de simetrias en rocas}
+
+La simetria de las  muestras de estudio hace que el numero de variables en el tensor de rigidez disminuya. El  caso mas general y sencillo es para materiales isotropicos. 
+\begin{equation}
+ C_{ijkl} =
+ \begin{bmatrix}
+ $\sigma_{1}$ & 0 & 0 & 0 & 0 & 0\\
+ 0 & \sigma_{2}& 0 & 0 & 0 & 0\\
+ 0 & 0 & \sigma_{3} & 0 & 0 & 0\\
+ 0 & 0 & 0 & $\tau_{4}$ & 0 & 0\\
+ 0 & 0 & 0 & 0 & $\tau_{5}$ & 0\\
+ 0 & 0 & 0 & 0 & 0 & $\tau_{6}$\\
+ \end{bmatrix}
+\end{equation}
+
+En  este trabajo las muestras analizadas (numero de muestras, zona) se consideraron ortotr\'opicas. Un material ortotropico es aquel que tiene la particularidad de (tenes isotropia en dos ejes y anisotropia entre el plano descrito por los ejes mencionados y  el tercer eje) (por qu\'e se  discutira en la proxima entrega).   El tensor de rigidez y su compilancia tambien pueden ser expresados en terminos de el coeficiente de Poisson\`s y y el modulo de Young de la forma:
+(imag.2)
+\begin{equation}
+\begin{bmatrix}
+ \varepsilon_{xx} \\
+ \varepsilon_{yy} \\
+ \varepsilon_{zz} \\
+ \varepsilon_{yz} \\
+ \varepsilon_{zx} \\
+ \varepsilon_{xy} \\
+\end{bmatrix}
+ =
+\begin{bmatrix}
+ $\dfrac{1}{E_{x}}$ & $-\dfrac{\nu_{yx}}{Ey}$ & $-\dfrac{\nu_{zx}}{Ez}$ & 0 & 0 & 0 \\ 
+ $-\dfrac{\nu_{xy}}{E_{x}}$ & $\dfrac{1}{E_{y}}$ & $-\dfrac{\nu_{zy}}{Ez}$ & 0 & 0 & 0 \\
+ $-\dfrac{\nu_{xz}}{E_{x}}$ & $-\dfrac{\nu_{yz}{E_{y}}$ & $\dfrac{1}{E_{z}}$ & 0 & 0 & 0\\
+ 0 & 0 & 0 & $\dfrac{1}{2 G_{yz}}$ & 0 & 0\\
+ 0 & 0 & 0 & 0 & $\dfrac{1}{2 G_{zx}}$ & 0\\
+ 0 & 0 & 0 & 0 & 0 & $\dfrac{1}{2 G_{xy}}$\\
+\end{bmatrix}
+
+\begin{bmatrix}
+ \sigma_{xx} \\
+ \sigma_{yy} \\
+ \sigma_{zz} \\
+ \sigma_{yz} \\
+ \sigma_{zx} \\
+ \sigma_{xy} \\
+\end{bmatrix}
+\end{equation}
+
+Para este tipo de simetria se toma encuenta que $ -\dfrac{\nu_{yx}}{Ey}= -\dfrac{\nu_{xy}}{Ex}$, $-\dfrac{\nu_{zx}}{Ez}=-\dfrac{\nu_{xz}}{E_{x}}$ y $-\dfrac{\nu_{yz}}{E_{y}}=-\dfrac{\nu_{zy}}{Ez}$ dejando solo 9 terminos. 
+
+Para  obtener los $\nu$ y $E$ se  tienen las siguientes relaciones:
+retomando las ecuaciones de $\mu_{r}= V_{pr}^{2}*\rho$ Y sabiendo que el m\'odulo de rigidez  tambien es expresado de la forma:
+\begin{equation}
+ \tau=G_{\gamma}
+\end{equation}
+
+El significado de la la constante  de Lam\'e`s $\mu$ es igual al modulo de rigidez $G$ 
+\begin{equation}
+ G=\dfrac{E}{2(1+\nu)}=\mu
+\end{equation}
+
+Con lo  valores  de $\mu$ conocidoa y los  coeficientes de Poisson\`s  para $x, y $ y $z $  se  puede  obtener  el modulo de Young\`s 
+
+\begin{equation}
+E= \mu*2(1+\nu)
+\end{equation}
+
+Y ya  con estos se puede conocer El tensor de rigidez reemplazando. 
+
+\section{Modelacion de las constantes de Lam\'e \`s}
+
+En las  secciones  anteriores  se  pudo observar los casos generales para obtener la compilancia de las muestras Pero los valores que se tienen de $V_{s}$ y $V_{s}$ van cambiando a medida  que se  aumenta la preci\'on para el caso  numero uno. 
+(Tablas de resultados) con los  valores de las velocidades y expreciones de los tensores.  
+
+(Aqui  va la  explicacion del metodo  numerico que  se  desarrollara)
+
+\section{Graficas de temperaturas y calculo de los modulos de estres }
+
+Apartir de los 500MP se  empieza  a  considerar que los cambios de precion no arrojaban datos considerables para los modulos por lo que se empezo a medir a presion constante y  con cambio de Temperaturas. Debidoa que ahora consideramos propiedades que  cambian bajo la  influencia de la tempeatura las ecuaciones quedad:
+
+\begin{equation}
+ \sigma_{ij}=\varepsilon_{ij}*C_{ijkl} -\beta*(\theta-\theta_{0})
+\end{equation}
+
+Donde: 
+$\beta$ es el tensor de propiedades termicas. 
+$\theta$ campo de temperatura
+$\theta_{0}$ temperatura en el $t=o$
+
+Para  efectos  del presente trabajo no se considerara la  variacion de la velocodad  con el aumento de la temperatura sino solo  dos  puntos  representativos. 
+
+(graficas y calculos) 
+
+%----------------------------
+\section{Otra  forma  de  calcular los coeficientes de la  rigidz  y complilancia} 
+
+Si se  tiene que:
+ 
+\begin{equation}
+ \sigma_{ij}= \mu (\dfrac{\partial u_{i}}{\partial x_{j}} + {\partial u_{j}}{\partial x_{i}})+ \lambda \delta_{ij}\theta
+\end{equation}
+
+Donde:
+
+$\sigma_{ij}=$  Al esfuerxo en las direcciones ij
+
+\[ \delta_{ij} = \left/{
+ \begin{array}{l l}
+    1 & \quad \text{Si i !=j }\\
+    0 & \quad \text{Si i=j}\\ 
+ \end{array} 
+}\right. \]
+$\theta=$ es el invariante. 
+ 
+Y  sabiendo  que $\varepsilon_{ij} = \dfrac{\partial u_{i}}{\partial x_{j}} + {\partial u_{j}}{\partial x_{i}}$ 
+
+\begin{equation}
+\begin{bmatrix}
+ \varepsilon_{xx} \\
+ \varepsilon_{yy} \\
+ \varepsilon_{zz} \\
+ \varepsilon_{yz} \\
+ \varepsilon_{zx} \\
+ \varepsilon_{xy} \\
+\end{bmatrix}
+=
+%\begin{bmatrix}
+ %$\dfrac{1}{E_{x}}$ & $ -\dfrac{\nu_{yx}}{Ey} $ & $-\dfrac{\nu_{zx}}{Ez}$ & 0 & 0 & 0 \\ 
+ %$-\dfrac{\nu_{xºy}}{Ex}$ & $\dfrac{1}{E_{y}}$  & $c & 0 & 0 & 0 \\
+ %$-\dfrac{\nu_{xz}}{E_{x}}$ & $-\dfrac{\nu_{yz}{E_{y}}$ & $\dfrac{1}{E_{z}}$ & 0 & 0 & 0\\
+ %0 & 0 & 0 & $\dfrac{1}{2 \mu_{7}}$ & 0 & 0\\
+ %0 & 0 & 0 & 0 & $\dfrac{1}{2 \mu_{8}}$ & 0\\
+ %0 & 0 & 0 & 0 & 0 & $\dfrac{1}{2 \mu_{9}}$
+%\end{bmatrix}
+\begin{bmatrix}
+ \sigma_{xx} \\
+ \sigma_{yy} \\
+ \sigma_{zz} \\
+ \sigma_{yz} \\
+ \sigma_{zx} \\
+ \sigma_{xy} \\
+\end{bmatrix}
+\end{equation}
+
+%---------------------------------------------------------------------
+
+%-------------------
+Una  forma de  hacerlo para i=j, es:
+
+\begin{equation}
+ \sigma_{11}= \mu_{1}(s\dfrac{\partial u_{1}}{\partial x_{1}} + \dfrac{\partial u_{1}}{\partial x_{1}})+ \lambda \delta_{11}\theta
+\end{equation}
+
+entonces:
+
+\begin{equation}
+ \sigma_{11}= \sigma_{1}= \mu_{1}(\dfrac{\partial u_{1}}{\partial x_{1}} + \dfrac{\partial u_{1}}{\partial x_{1}})=  2\mu_{1}\dfrac{\partial u_{1}}{\partial x_{1}} 
+\end{equation}
+
+por lo que para $\sigma_{22}$ y $\sigma_{33}$ queda 
+
+\begin{equation}
+ \sigma_{22}=\sigma_{2}= \mu_{2}(\dfrac{\partial u_{2}}{\partial x_{2}} + \dfrac{\partial u_{2}}{\partial x_{2}})= 2\mu_{2}\dfrac{\partial u_{2}}{\partial x_{2}}
+\end{equation}
+
+\begin{equation}
+ \sigma_{33}=\sigma_{3}= \mu_{3} (\dfrac{\partial u_{3}}{\partial x_{3}} + \dfrac{\partial u_{3}}{\partial x_{3}}) = 2\mu_{3} \dfrac{\partial u_{3}}{\partial x_{3}}
+\end{equation}
+
+Mientras  que  para $\sigma_{12}$ y $\sigma_{23}$
+
+\begin{equation}
+ \sigma_{12}=\sigma_{4}= \mu_{4}(\dfrac{\partial u_{1}}{\partial x_{2}} + \dfrac{\partial u_{2}}{\partial x_{1}})+ \lambda \delta_{12}\theta
+\end{equation}
+\begin{equation}
+ \sigma_{23}=\sigma_{5}= \mu_{5}(\dfrac{\partial u_{2}}{\partial x_{3}} + \dfrac{\partial u_{3}}{\partial x_{2}})+ \lambda \delta_{23}\theta
+\end{equation}
+\begin{equation}
+ \sigma_{31}=\sigma_{6}= \mu_{6}(\dfrac{\partial u_{3}}{\partial x_{1}} + \dfrac{\partial u_{1}}{\partial x_{3}})+ \lambda \delta_{31}\theta
+\end{equation}
+
+hasta  aqui tenemos las  primera 6 componentes de  nuestro tensor  
+%------------
+\begin{equation}
+ \sigma_{31}=\sigma_{6}= \mu_{6}(\dfrac{\partial u_{3}}{\partial x_{1}} + \dfrac{\partial u_{1}}{\partial x_{3}})+ \lambda \delta_{31}\theta
+\end{equation}
+
+\section{Resultados}
+\section{Discuci\'on}
+\section{Conclusione}
+
+%--------------------------
+\begin{thebibliography}{90}
+ \bibitem{cita1}Y.Gu\'eguen, A.Schubnel.(2003). Elastic wave velocities and permability of cracked rocks.Paris: Department of terre Atmosphere ocean, Ecole Normale Superieure, 24 Rue Lhommmond.
+ \url{http://serc.carleton.edu/NAGTWorkshops/mineralogy/mineral_physics/tensors.html} 
+ \bibitem{cita2} 
+\end{thebibliography}
+%para citar recordar 
+%\cite{nombreCita}
+%\url{hipervínculo}
+
+\end{document}
